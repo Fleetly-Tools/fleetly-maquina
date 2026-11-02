@@ -4,7 +4,8 @@
   "name": "Fleetly",
   // imagem leve (Node e git, ~1 GB): a "universal" tem ~10 GB e o codespace levava ~30 min para nascer
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
-  "features": { "ghcr.io/devcontainers/features/github-cli:1": {} },
+  // gh: entrar no GitHub pelo painel; sshd: a central mantém a máquina ligada em tarefas longas (e dá para inspecionar)
+  "features": { "ghcr.io/devcontainers/features/github-cli:1": {}, "ghcr.io/devcontainers/features/sshd:1": {} },
   "hostRequirements": { "cpus": 2, "memory": "8gb" },
   // uma vez, na criação: instala tudo e liga o coletor ao seu Fleetly
   "postCreateCommand": "bash .devcontainer/fleetly.sh instalar",
