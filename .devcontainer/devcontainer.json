@@ -2,7 +2,9 @@
   // Máquina na nuvem do Fleetly (https://fleetly.tools): um GitHub Codespace com o Claude Code, o Codex e o coletor,
   // que aparece no seu Fleetly como mais uma máquina. Você entra nas contas pelo painel (Contas desta máquina).
   "name": "Fleetly",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // imagem leve (Node e git, ~1 GB): a "universal" tem ~10 GB e o codespace levava ~30 min para nascer
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": { "ghcr.io/devcontainers/features/github-cli:1": {} },
   "hostRequirements": { "cpus": 2, "memory": "8gb" },
   // uma vez, na criação: instala tudo e liga o coletor ao seu Fleetly
   "postCreateCommand": "bash .devcontainer/fleetly.sh instalar",
